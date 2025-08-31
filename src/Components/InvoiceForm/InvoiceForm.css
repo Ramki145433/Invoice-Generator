@@ -1,0 +1,24 @@
+.invoice-form-container{
+    background-color: #1e283b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    padding: 20px;
+    min-width: 35%;
+    height: 100vh;
+    border-radius: 10px;
+    z-index: 200;
+    margin-top: -5rem;
+    .top-bar{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding : 10px;
+        h3{
+            color: white;
+            font-weight: 600;
+        }
+    }
+}

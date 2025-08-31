@@ -1,0 +1,75 @@
+.invoice-list-container{
+    /* background-color: #1e283b; */
+    background-color: transparent;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 20px;
+    min-width: 60%;
+    height: 100vh;
+    border-radius: 10px;
+    margin-top: 2rem;
+    h1{
+        color: white;
+        font-weight: 600;
+    }
+}
+
+.invoice-card{
+    color : white;
+    background-color: #1e283b;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    cursor: pointer;
+    .invoice-card-left{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 20px;
+        .invoice-id{
+            color: white;
+            font-weight: 600;
+        }
+        .invoice-client-name{
+            color: white;
+            font-weight: 600;
+        }
+    }
+    .invoice-card-right{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        gap: 20px;
+        .invoice-due-date{
+            color: white;
+            font-weight: 600;
+        }
+        .invoice-amount{
+            color: white;
+            font-weight: 600;
+        }
+        .status{
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            &.paid{
+                background-color: #33d69f1a;
+                color: #33d69f;
+            }
+            &.pending{
+                background-color: #ff8f001a;
+                color: #ff8f00;
+            }
+            &.draft{
+                background-color: #373b53;
+                color: #888eb0;
+            }
+        }
+    }
+}
