@@ -5,11 +5,13 @@
     align-items: center;
     justify-content: start;
     padding: 20px;
-    min-width: 35%;
+    min-width: 36%;
     height: 100vh;
     border-radius: 10px;
     z-index: 200;
-    margin-top: -5rem;
+    position: fixed;
+    top: 5%;
+    left: auto;
     .top-bar{
         display: flex;
         align-items: center;

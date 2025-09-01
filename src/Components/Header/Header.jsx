@@ -15,7 +15,7 @@ function Header() {
         <div className="header-content-right">
             <Funnel size={24} strokeWidth={1.5} style={{ color: "white" }} />
             <p>Filter by Status</p>
-            <div className="add-new-invoice" onClick={() => dispatch(toggleFormVisibility())}>
+            <div className="add-new-invoice" onClick={() => dispatch(toggleFormVisibility({"isFormVisible": true}))}>
                 <CirclePlus size={24} color="#ffffff" strokeWidth={1.5} />
                 <p>New Invoice</p>
             </div>
