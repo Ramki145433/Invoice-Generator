@@ -2,10 +2,9 @@
     padding: 20px;
     background-color: #1e283b;
     border-radius: 8px;
-    /* border: 1px solid white; */
+    color: white;
     width: 55%;
     height: 100vh;
-    color: white;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -98,4 +97,89 @@
     outline: none;
     border: none;
     cursor: pointer;
+}
+
+.invoice-details{
+    background-color: #10162a;
+    width: 100%;
+    height: 90%;
+    margin-top: 1rem;
+    border-radius: 8px;
+}
+
+.first-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    #first-right{
+        color: #72798f
+    } 
+}
+
+.second-section{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: 20px;
+    .second-left{
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .second-middle{
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: start;
+        justify-content: start;
+    }
+}
+
+.third-section{
+    background-color: #1c2536;
+    width: 95%;
+    margin: 0 auto;
+    .item-row{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px;
+        border-bottom: 1px solid #2a2f45;
+        .item-details{
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            .item-name{
+                color: white;
+                font-weight: 600;
+            }
+            .item-price{
+                color: #888eb0;
+            }
+        }
+        .item-total{
+            color: white;
+            font-weight: 600;
+        }
+    }
+}
+
+.fourth-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    width: 95%;
+    margin: 0 auto;
+    .amount-due-text{
+        color: #72798f;
+        font-weight: 600;
+    }
+    .amount-due-value{
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
 }
