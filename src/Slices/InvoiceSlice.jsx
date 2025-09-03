@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
     {
-        id: "INV" + Math.floor(1000 + Math.random() * 9000).toString(), // has to show on UI
+        id: "INV" + 1234, // has to show on UI
         invoiceStatus: "Pending", // has to show on UI
         itemsList: [
             {
@@ -37,7 +37,51 @@ const invoiceSlice = createSlice({
     initialState,
     reducers: {
         addInvoice: (state, action) => {
-            state.push(action.payload);
+            const payload = action.payload;
+            console.log("Adding invoice with payload:", payload);
+
+            // Calculate total amount
+            const totalAmount = payload.items.reduce(
+                (sum, item) => sum + (Number(item.qty) * Number(item.price)),
+                0
+            );
+
+            // Generate a unique invoice ID
+            const id = "INV" + Math.floor(1000 + Math.random() * 9000).toString();
+
+            // Map items to match state structure
+            const itemsList = payload.items.map(item => ({
+                itemName: item.name,
+                quantity: Number(item.qty),
+                price: Number(item.price)
+            }));
+
+            // Build the invoice object to match state structure
+            const newInvoice = {
+                id,
+                invoiceStatus: "Pending",
+                itemsList,
+                totalAmount,
+                billFrom: {
+                    streetAddress: payload.billFrom.street,
+                    city: payload.billFrom.city,
+                    postCode: payload.billFrom.postCode,
+                    country: payload.billFrom.country
+                },
+                billTo: {
+                    clientName: payload.billTo.name,
+                    clientEmail: payload.billTo.email,
+                    streetAddress: payload.billTo.street,
+                    city: payload.billTo.city,
+                    postCode: payload.billTo.postCode,
+                    country: payload.billTo.country,
+                    date: payload.invoiceDate,
+                    paymentTenure: Number(payload.paymentTerms),
+                    projectDescription: payload.projectDescription
+                }
+            };
+
+            state.push(newInvoice);
         }
     }
 });
