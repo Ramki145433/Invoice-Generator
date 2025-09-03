@@ -1,13 +1,24 @@
-import {useSelector} from "react-redux"
-import "./InvoiceList.css"
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import "./InvoiceList.css";
 
 function InvoiceList() {
     const invoices = useSelector((state) => state.invoices);
-    console.log(invoices);
-    return <div className="invoice-list-container">
-        {
-            invoices.map((invoice) => (
-                <div className="invoice-card" key={invoice.id}>
+    const navigate = useNavigate();
+
+    const handleCardClick = (invoiceId) => {
+        navigate(`/${invoiceId}`);
+    };
+
+    return (
+        <div className="invoice-list-container">
+            {invoices.length !== 0 ? invoices.map((invoice) => (
+                <div
+                    className="invoice-card"
+                    key={invoice.id}
+                    onClick={() => handleCardClick(invoice.id)}
+                    style={{ cursor: "pointer" }}
+                >
                     <div className="invoice-card-left">
                         <p>{invoice.id}</p>
                         <p>{invoice.billTo.date}</p>
@@ -19,9 +30,9 @@ function InvoiceList() {
                         <div className="arrow-right">&#8250;</div>
                     </div>
                 </div>
-            ))
-        }
-    </div>
+            )) : <p className="no-invoices">No Invoices</p>}
+        </div>
+    );
 }
 
-export default InvoiceList
+export default InvoiceList;

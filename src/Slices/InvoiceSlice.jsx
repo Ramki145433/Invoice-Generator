@@ -82,9 +82,21 @@ const invoiceSlice = createSlice({
             };
 
             state.push(newInvoice);
+        },
+        deleteInvoice: (state, action) => {
+            const invoiceId = action.payload.invoiceId;
+            console.log("Deleting invoice with ID:", invoiceId);
+            return state.filter(invoice => invoice.id !== invoiceId);
+        },
+        markAsPaid: (state, action) => {
+            const invoiceId = action.payload.invoiceId;
+            const invoice = state.find(inv => inv.id === invoiceId);
+            if (invoice) {
+                invoice.invoiceStatus = "Paid";
+            }
         }
     }
 });
 
-export const { addInvoice } = invoiceSlice.actions;
+export const { addInvoice, deleteInvoice, markAsPaid} = invoiceSlice.actions;
 export default invoiceSlice.reducer;

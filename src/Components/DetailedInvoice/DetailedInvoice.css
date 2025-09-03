@@ -1,0 +1,101 @@
+.detailed-invoice {
+    padding: 20px;
+    background-color: #1e283b;
+    border-radius: 8px;
+    /* border: 1px solid white; */
+    width: 55%;
+    height: 100vh;
+    color: white;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.top-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding-bottom: 1rem;
+    .top-bar-left{
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        /* border: 1px solid white; */
+        gap: 20px;
+        .invoice-id{
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .status-indicator{
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-weight: 600;
+            &.paid{
+                background-color: #33d69f1a;
+                color: #33d69f;
+            }
+            &.pending{
+                background-color: #ff8f001a;
+                color: #ff8f00;
+            }
+            &.draft{
+                background-color: #373b53;
+                color: #888eb0;
+            }
+        }
+    }
+    .action-buttons{
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        /* border: 1px solid white; */
+        width: 100%;
+        gap: 10px;
+    }
+        
+}
+
+.download-button{
+    background-color: #364258;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 16px 28px;
+    border-radius: 2rem;
+    cursor: pointer;
+}
+
+.edit-button{
+    background-color: #364258;
+    padding: 20px 28px;
+    border-radius: 2rem;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-button{
+    background-color: #e74d46;
+    padding: 20px 28px;
+    border-radius: 2rem;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+
+.mark-paid-button{
+    background-color: #8a61f2;
+    padding: 20px 28px;
+    border-radius: 2rem;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
